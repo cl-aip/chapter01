@@ -12,6 +12,14 @@ nil => nil
 most-positive-fixnum => 1152921504606846975  ;implementation dependent
 most-negative-fixnum => -1152921504606846976 ;implementation dependent
 
+short-float-epsilon  => 5.960465e-8            ;implementation dependent
+single-float-epsilon => 5.960465e-8            ;implementation dependent
+double-float-epsilon => 1.1102230246251568d-16 ;implementation dependent
+long-float-epsilon   => 1.1102230246251568d-16 ;implementation dependent
+(not (= (float 1 short-float-epsilon)
+        (+ (float 1 short-float-epsilon) short-float-epsilon)))
+ => t
+
 (max 2 3 4) => 4
 (min 2 3 4) => 2
 (/ (+ 3 1) (- 3 1)) => 2
